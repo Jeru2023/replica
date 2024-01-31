@@ -9,4 +9,4 @@ Special thanks to the following projects and contributors:
 - [FFmpeg] (https://github.com/FFmpeg/FFmpeg)
 - [GPT-SoVITS] (https://github.com/RVC-Boss/GPT-SoVITS)
 - [audio-slicer] (https://github.com/openvpi/audio-slicer)
-- [Whisper] (https://github.com/openai/whisper)
+- [FunASR] (https://github.com/alibaba-damo-academy/FunASR)
