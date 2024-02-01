@@ -10,7 +10,9 @@ output: 主办方要我来讲一讲我自己的人生故事。我想了想，我
 
 ```bash
 import utils
+import os
 from tools import asr_tool
+
 asr_tool = asr_tool.ASRTool()
 
 audio_sample = os.path.join(utils.get_root_path(), 'data', 'audio', 'sample.wav')
