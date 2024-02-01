@@ -11,6 +11,7 @@ from text.cleaner import clean_text
 from text import cleaned_text_to_sequence
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 from service.mel_processing import spectrogram_torch
+from AR.models.t2s_lightning_module import Text2SemanticLightningModule
 
 root_path = utils.get_root_path()
 sovits_path = os.path.join(root_path, 'models', 's2G488k.pth')
