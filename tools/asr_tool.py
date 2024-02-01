@@ -1,36 +1,37 @@
-from modelscope.pipelines import pipeline
-from modelscope.utils.constant import Tasks
+from funasr import AutoModel
 import os
-import utils
 
 
-root_path = utils.get_root_path()
-print(root_path)
-
-# set damo asr models path
-asr_path = os.path.join(root_path, 'models', 'damo_asr',
-                        'speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch')
-vad_path = os.path.join(root_path, 'models', 'damo_asr',
-                        'speech_fsmn_vad_zh-cn-16k-common-pytorch')
-punc_path = os.path.join(root_path, 'models', 'damo_asr',
-                        'punc_ct-transformer_zh-cn-common-vocab272727-pytorch')
-
-print(asr_path)
-
-# inference_pipeline = pipeline(
-#     task = Tasks.auto_speech_recognition,
-#     model = asr_path,
-#     vad_model = vad_path,
-#     punc_model = punc_path
-# )
-#
-audio_sample = os.path.join(root_path, r'data/audio/sample.wav')
-print(audio_sample)
-#
-# # , batch_size_token=5000, batch_size_token_threshold_s=40, max_single_segment_time=6000
-# rec_result = inference_pipeline(input=audio_sample)
-# print(rec_result)
+# voice recognition model
+ASR_MODEL_NAME = "damo/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch"
+# voice end-point detection model
+VAD_MODEL_NAME = "damo/speech_fsmn_vad_zh-cn-16k-common-pytorch"
+# punctuation model
+PUNC_MODEL_NAME = "damo/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
 
 
+class ASRTool:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def get_model():
+        model = AutoModel(model=ASR_MODEL_NAME, model_revision="v2.0.2",
+                          vad_model=VAD_MODEL_NAME, vad_model_revision="v2.0.2",
+                          punc_model=PUNC_MODEL_NAME, punc_model_revision="v2.0.3",
+                          )
+        return model
+
+    # inference param: batch_size_token = 5000, batch_size_token_threshold_s = 40, max_single_segment_time = 6000
+    def inference(self, audio_input):
+        model = self.get_model()
+        result = model.generate(audio_input)[0]['text']
+        return result
 
 
+if __name__ == '__main__':
+    import utils
+    asr_tool = ASRTool()
+    audio_sample = os.path.join(utils.get_root_path(), 'data', 'audio', 'sample.wav')
+    output = asr_tool.inference(audio_sample)
+    print(output)
