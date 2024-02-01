@@ -234,6 +234,7 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language)
         )  # .float()
         codes = vq_model.extract_latent(ssl_content)
         prompt_semantic = codes[0, 0]
+
     t1 = ttime()
     prompt_language = "zh"
     text_language = "zh"
@@ -248,6 +249,7 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language)
     text = text.replace("\n\n", "\n").replace("\n\n", "\n").replace("\n\n", "\n")
     if text[-1] not in splits: text += "。" if text_language != "en" else "."
     texts = text.split("\n")
+
     audio_opt = []
     if prompt_language == "en":
         bert1 = get_bert_inf(phones1, word2ph1, norm_text1, prompt_language)
@@ -299,6 +301,7 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language)
                 top_k=config["inference"]["top_k"],
                 early_stop_num=hz * max_sec,
             )
+
         t3 = ttime()
         # print(pred_semantic.shape,idx)
         pred_semantic = pred_semantic[:, -idx:].unsqueeze(
@@ -325,3 +328,9 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language)
     yield hps.data.sampling_rate, (np.concatenate(audio_opt, 0) * 32768).astype(
         np.int16
     )
+
+    # inference_button.click(
+    #     get_tts_wav,
+    #     [inp_ref, prompt_text, prompt_language, text, text_language, how_to_cut],
+    #     [output],
+    # )
