@@ -4,8 +4,8 @@ All in one application to replicate human voice, image, even the mind.
 
 ## Usage
 ### ASR
+https://github.com/Jeru2023/replica/assets/123569003/a7a77828-6558-44c3-b683-6b98726ac882
 
-https://github.com/Jeru2023/replica/assets/123569003/0c699da1-bbc1-40cd-8300-a52e536462b3
 output: 主办方要我来讲一讲我自己的人生故事。我想了想，我只能说我在学生时期的时候，从来没有想过，有一天我能够拥有这样精彩的人生舞台。
 
 ```bash
