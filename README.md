@@ -1,9 +1,9 @@
 # Replica v0.0.1
 
-To replicate human voice, image, even the mind.
+All in one application to replicate human voice, image, even the mind.
 
 ## Usage
-
+### ASR
 
 ## Installation
 ### MacOS Users
