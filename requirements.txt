@@ -1,1 +1,10 @@
 modelscope==1.10.0
+transformers
+sentencepiece
+funasr>=1.0.0
+jieba_fast
+jieba
+ffmpeg-python
+pypinyin
+pyopenjtalk
+rotary_embedding_torch
