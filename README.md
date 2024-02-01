@@ -5,10 +5,18 @@ All in one application to replicate human voice, image, even the mind.
 ## Usage
 ### ASR
 
-
 https://github.com/Jeru2023/replica/assets/123569003/0c699da1-bbc1-40cd-8300-a52e536462b3
+output: 主办方要我来讲一讲我自己的人生故事。我想了想，我只能说我在学生时期的时候，从来没有想过，有一天我能够拥有这样精彩的人生舞台。
 
+```bash
+import utils
+from tools import asr_tool
+asr_tool = asr_tool.ASRTool()
 
+audio_sample = os.path.join(utils.get_root_path(), 'data', 'audio', 'sample.wav')
+output = asr_tool.inference(audio_sample)
+print(output)
+```
 
 ## Installation
 ### MacOS Users
