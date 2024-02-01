@@ -1,5 +1,4 @@
 from funasr import AutoModel
-import os
 
 
 # voice recognition model
@@ -10,7 +9,7 @@ VAD_MODEL_NAME = "damo/speech_fsmn_vad_zh-cn-16k-common-pytorch"
 PUNC_MODEL_NAME = "damo/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
 
 
-class ASRTool:
+class ASRModel:
     def __init__(self):
         pass
 
@@ -27,11 +26,3 @@ class ASRTool:
         model = self.get_model()
         result = model.generate(audio_input)[0]['text']
         return result
-
-
-if __name__ == '__main__':
-    import utils
-    asr_tool = ASRTool()
-    audio_sample = os.path.join(utils.get_root_path(), 'data', 'audio', 'sample.wav')
-    output = asr_tool.inference(audio_sample)
-    print(output)

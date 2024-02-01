@@ -7,4 +7,6 @@ jieba
 ffmpeg-python
 pypinyin
 pyopenjtalk
+librosa
+soundfile
 rotary_embedding_torch
