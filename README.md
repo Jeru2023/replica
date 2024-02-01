@@ -6,6 +6,10 @@ All in one application to replicate human voice, image, even the mind.
 ### ASR
 
 
+https://github.com/Jeru2023/replica/assets/123569003/0c699da1-bbc1-40cd-8300-a52e536462b3
+
+
+
 ## Installation
 ### MacOS Users
 If you are a Mac user, make sure you meet the following conditions for training and inferencing with GPU:
