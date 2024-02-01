@@ -1,4 +1,6 @@
 import os
+import pkg_resources
+
 
 def get_root_path():
     package_path = pkg_resources.resource_filename(__name__, "")
