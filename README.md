@@ -75,10 +75,10 @@ VAD_MODEL_NAME = "damo/speech_fsmn_vad_zh-cn-16k-common-pytorch"
 # punctuation model
 PUNC_MODEL_NAME = "damo/punc_ct-transformer_zh-cn-common-vocab272727-pytorch"
 ```
-### Bert
+### GPT-SoVITS 
 Clone files from huggingface to ./models/
 
-Below repo contains chinese-hubert-base and chinese-roberta-wwm-ext-large
+Below repo contains chinese-hubert-base(as encoder), chinese-roberta-wwm-ext-large, sovits and GPT models.
 https://huggingface.co/lj1995/GPT-SoVITS
 
 
@@ -91,3 +91,4 @@ Special thanks to the following projects and contributors:
 - [audio-slicer] (https://github.com/openvpi/audio-slicer)
 - [FunASR] (https://github.com/alibaba-damo-academy/FunASR)
 - [chinese_speech_pretrain] (https://github.com/TencentGameMate/chinese_speech_pretrain)
+- [vits] (https://github.com/jaywalnut310/vits)
