@@ -9,3 +9,5 @@ pyopenjtalk
 librosa
 soundfile
 rotary_embedding_torch
+numpy
+torch
