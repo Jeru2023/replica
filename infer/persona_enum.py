@@ -16,3 +16,17 @@ class PersonaEnum(Enum):
         "language": "zh",
     }
 
+    @staticmethod
+    def get_persona_by_name(name):
+        for enum in list(PersonaEnum):
+            if name == enum.value['name']:
+                return enum
+
+    def get_ref_audio(self):
+        return self.value["ref_audio"]
+
+    def get_ref_text(self):
+        return self.value["ref_text"]
+
+    def get_language(self):
+        return self.value["language"]

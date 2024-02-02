@@ -11,7 +11,7 @@ output: 主办方要我来讲一讲我自己的人生故事。我想了想，我
 ```bash
 import utils
 import os
-from modules.asr_model import ASRModel
+from module.asr_model import ASRModel
 
 asr_model = ASRModel()
 
