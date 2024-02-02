@@ -4,13 +4,13 @@ import torch
 import utils
 import os
 import re
-from service.models import SynthesizerTrn
+from modules.models import SynthesizerTrn
 import librosa
 from feature_extractor import cnhubert
 from text.cleaner import clean_text
 from text import cleaned_text_to_sequence
 from transformers import AutoModelForMaskedLM, AutoTokenizer
-from service.mel_processing import spectrogram_torch
+from modules.mel_processing import spectrogram_torch
 from AR.models.t2s_lightning_module import Text2SemanticLightningModule
 
 root_path = utils.get_root_path()

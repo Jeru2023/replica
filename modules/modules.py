@@ -7,9 +7,9 @@ from torch.nn import functional as F
 from torch.nn import Conv1d
 from torch.nn.utils import weight_norm, remove_weight_norm
 
-from service import commons
-from service.commons import init_weights, get_padding
-from service.transforms import piecewise_rational_quadratic_transform
+from modules import commons
+from modules.commons import init_weights, get_padding
+from modules.transforms import piecewise_rational_quadratic_transform
 import torch.distributions as D
 
 

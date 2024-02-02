@@ -1,6 +1,6 @@
 import utils
 import os
-from service.asr_model import ASRModel
+from infer.asr_model import ASRModel
 
 asr_model = ASRModel()
 
