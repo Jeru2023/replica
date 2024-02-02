@@ -3,15 +3,15 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from service import commons
-from service import modules
-from service import attentions
+from module import commons
+from module import modules
+from module import attentions
 
 from torch.nn import Conv1d, ConvTranspose1d, Conv2d
 from torch.nn.utils import weight_norm, remove_weight_norm, spectral_norm
-from service.commons import init_weights, get_padding
-from service.mrte_model import MRTE
-from service.quantize import ResidualVectorQuantizer
+from module.commons import init_weights, get_padding
+from module.mrte_model import MRTE
+from module.quantize import ResidualVectorQuantizer
 from text import symbols
 from torch.cuda.amp import autocast
 
